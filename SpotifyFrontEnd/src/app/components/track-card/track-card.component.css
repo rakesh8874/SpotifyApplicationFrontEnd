@@ -1,0 +1,12 @@
+.card-content{
+    text-align: center;
+    margin: 15px;
+    padding: 3px;
+    height: 270px;
+    width: 300px;
+    display: inline-flex;
+}
+
+.card-content h4 {
+     margin-top:-2px;
+}

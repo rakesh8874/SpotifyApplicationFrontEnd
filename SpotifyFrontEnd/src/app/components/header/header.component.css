@@ -1,0 +1,7 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .playlist{
+    color:white;
+    text-decoration: none;
+  }

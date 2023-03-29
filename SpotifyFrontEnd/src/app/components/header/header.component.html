@@ -1,0 +1,17 @@
+<mat-toolbar color = "primary">
+    <a routerLink = "/" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>home</mat-icon>
+    </a>
+    <span routerLink = "/">StayTune</span>
+    <span class="example-spacer"></span>
+    <a routerLink = "/playlist" class = "playlist">Create Playlist</a>
+    <a *ngIf = "!loggedIn" routerLink = "/login" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>login</mat-icon>
+    </a>
+    <a *ngIf = "loggedIn" (click) = "logoutuser()" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>logout</mat-icon>
+    </a>
+    <a routerLink ="/signup" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>how_to_reg</mat-icon>
+    </a>
+  </mat-toolbar>

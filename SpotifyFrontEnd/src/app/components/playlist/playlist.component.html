@@ -1,0 +1,59 @@
+<!-- Form for Creating Playlist and adding song into playlist -->
+<div class="container">
+        <button class = "mainBtn" color = "primary" (click) = "showPlaylistForm()" mat-raised-button>
+           Create Your Favrouite Playlist
+        </button>
+        <div class = "div3div" *ngIf = "showPlaylist">
+        <form (ngSubmit) = "generatePlaylist()" [formGroup] = "playlistform">
+           <mat-form-field>
+            <input matInput name="playlistName" placeholder = "Playlist Name" formControlName = "playlistName">
+            </mat-form-field>
+            <button mat-raised-button  color="primary" type = "submit">Create Playlist</button>
+           </form>
+       </div>
+
+       <!--  to see your available playlist and perform some operations -->
+      <div class = "btn-container">
+      <button mat-raised-button color="primary" class = "mybtn" (click) = "showPlaylists()">Available Playlists</button>
+      <div class = "card" *ngIf = "playlistd">
+        Playlist Name
+      <div *ngFor = "let playlist of playListDetails">
+       <a (click) = "showSongsDetailsA()" class = "link">
+          {{playlist.playlistName}}</a> <a (click) = "deleteSelectedPlaylist()" class = "link mylink"><mat-icon color = "warn">delete</mat-icon></a>
+      </div>
+      <div class = "card" *ngIf = "showSongsA">
+         Track Name
+      <div *ngFor = "let song of addedSongs">
+         <a class = "link" routerLink = "/play"><span>{{song.trackName}}</span></a><a class = "link mylink" (click) = "deleteSong()"><mat-icon color = "warn">delete</mat-icon></a>
+      </div>
+    </div>
+    </div>
+    
+    <!-- to add songs into playlist -->
+
+      <button mat-raised-button color="primary" class = "mybtn" (click) = "addSongIntoPlaylist()">Add Songs Into Playlist</button>
+      <div class = "card" *ngIf = "playlista">
+         Playlist Name
+        <div *ngFor = "let playlist of playListDetails">
+          <a (click) = "showSongsForm()" class = "link">{{playlist.playlistName}}</a>
+          <div *ngIf = "song">
+
+        <h3>Choose Song To Add Into Your Playlist</h3>
+        <form (ngSubmit) = "addSongsInPlaylist()" [formGroup] = "addSongForm">
+        <mat-form-field appearance="fill">
+          <mat-label>Favrouite Songs</mat-label>
+          <mat-select name="trackName" formControlName = "trackName">
+            <mat-option type="text" *ngFor="let song of songsIdAndName" [value]="song.trackName">
+            {{song.trackName}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+       <button mat-raised-button type = "submit" color = "primary">Add Songs</button>
+       </form>
+
+      </div>
+      </div>
+      </div>
+    </div>
+</div>

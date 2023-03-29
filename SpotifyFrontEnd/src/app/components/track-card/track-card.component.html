@@ -1,0 +1,9 @@
+<div class="card card-content" *ngFor="let song of songsDetails">
+    <h4>TrackID : {{song.trackId}}</h4>
+    <h4>Track Name: {{song.trackName}}</h4>
+    <h4>TrackArtist:{{song.trackArtist.artistName}}</h4>
+    <h4>TrackGenre:{{song.trackGenre}}</h4>
+    <h4>TrackRating:{{song.trackRating}}</h4>
+    <h4>TrackDuration:{{song.trackDuration}}</h4>
+    <h4><a routerLink = "/play"><mat-icon *ngIf = "song.playIcon === 'play_arrow'" color = "primary">play_arrow</mat-icon></a></h4>
+</div>

@@ -1,0 +1,42 @@
+<!-- login form -->
+<div class = "container">
+    <div class="row">
+        <div class = "col-md-6 offset-md-3 mt10">
+            <mat-card>
+            <h1 class = "text-center">Login Here !!</h1>
+            <form action="" class = "p-3" [formGroup] = "loginForm" (ngSubmit) = "onSubmit()">
+              
+              <!-- field for username -->
+              
+              <mat-form-field class = "fullwidth" appearance="outline">
+                <mat-label>Username</mat-label>
+                <input matInput placeholder="Enter User Name" formControlName = "username" name = "username">
+                <mat-error *ngIf = "username?.errors?.['required']">
+                  User Name is Required
+                  </mat-error>
+              </mat-form-field>
+
+              <!-- field for password -->
+
+              <mat-form-field class = "fullwidth" appearance="outline">
+                <mat-label>User Password</mat-label>
+                <input type = "password" matInput placeholder="Enter Your Password" formControlName = "password"  name = "password">
+                <mat-error *ngIf = "password?.errors?.['required']">
+                  Password Required
+                  </mat-error>
+                  <div>
+                    <mat-error *ngIf = "password?.errors?.['pattern']">
+                        Please Provide Valid Password 
+                    </mat-error>
+                    </div>
+              </mat-form-field>
+                      <!-- login and reset button -->
+                  <div class="container text-center mb10">
+                    <button mat-raised-button color = "primary" type = "submit" [disabled]="!loginForm.valid">Login</button>
+                    <button mat-raised-button color = "accent" type = "submit" type="reset">Reset</button>
+                  </div>
+              </form>
+        </mat-card>
+        </div>
+    </div>
+</div>

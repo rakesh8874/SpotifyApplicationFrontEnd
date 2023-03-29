@@ -1,0 +1,28 @@
+.mainBtn{
+    margin-top:100px;
+    margin-left: 500px;
+    width: 300px;
+}
+.div3div{
+    width: 200px;
+    margin-left: 500px;
+    text-align: center;
+}
+.btn-container{
+    width:300px;
+    margin-left: 500px;
+}
+.mybtn{
+    margin-top: 10px;
+    width: 300px;
+}
+.link{
+    text-decoration: none;
+    cursor: pointer;
+}
+.spacex{
+    margin-left: 60px;
+}
+.mylink{
+    margin-left: 40px;
+}

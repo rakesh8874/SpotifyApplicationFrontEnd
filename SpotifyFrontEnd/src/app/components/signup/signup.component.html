@@ -1,0 +1,96 @@
+<!-- user sign in form -->
+<div class = "container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 mt10">
+          <mat-card>
+            <h1 class = "text-center">Register Here !!</h1>     
+            <form action="" (ngSubmit) = "onSubmit()" class = "p-3" [formGroup] = "signInForm">
+              
+              <!-- field for Username   -->
+
+              <mat-form-field class = "fullwidth" appearance="outline">
+                    <mat-label>Username</mat-label>
+                    <input matInput placeholder="Enter User Name" formControlName = "username" name = "username">
+                    <mat-error *ngIf = "username?.errors?.['required']">
+                      User Name is Required
+                      </mat-error>
+                  </mat-form-field>
+
+                  <!-- field for password -->
+
+                  <mat-form-field class = "fullwidth" appearance="outline">
+                    <mat-label>User Password</mat-label>
+                    <input type = "password" matInput placeholder="Enter Your Password" formControlName = "password"  name = "password">
+                    <mat-error *ngIf = "password?.errors?.['required']">
+                      Password Required
+                      </mat-error>
+                      <div>
+                        <mat-error *ngIf = "password?.errors?.['pattern']">
+                            Password Should Have min 5 letter password, with atlease a symbol a upper and lower case letters and a number 
+                        </mat-error>
+                        </div>
+                  </mat-form-field>
+                  
+                  <!-- field for firstName -->
+                     
+                  <mat-form-field class = "fullwidth" appearance="outline">
+                    <mat-label>First Name</mat-label>
+                    <input matInput placeholder="Enter First Name"  name = "firstName" formControlName = "firstName">
+                    <mat-error *ngIf = "firstName?.errors?.['required']">
+                      First Name is Required
+                      </mat-error>
+                  </mat-form-field>
+                  
+                  <!-- field for lastname -->
+
+                  <mat-form-field class = "fullwidth" appearance="outline">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput placeholder="Enter Last Name" name = "lastName" formControlName = "lastName">
+                    <mat-error *ngIf = "lastName?.errors?.['required']">
+                      Last Name is Required
+                      </mat-error>
+                  </mat-form-field>
+                  
+                  <!-- field for email id -->
+
+                  <mat-form-field class = "fullwidth" appearance="outline">
+                    <mat-label>Email Address</mat-label>
+                    <input type = "email" matInput placeholder="Enter Email Address" name = "email" formControlName = "email">
+                    <mat-error *ngIf = "email?.errors?.['required']">
+                      Email Id is Required
+                      </mat-error>
+                      <div>
+                        <mat-error *ngIf = "email?.errors?.['pattern']">
+                            Please Provide Valid Email Id 
+                        </mat-error>
+                        </div>
+                  </mat-form-field>
+
+                  <!-- field for Contact number -->
+
+                  <mat-form-field class = "fullwidth" appearance="outline">
+                    <mat-label>User Phone No</mat-label>
+                    <input type = "number" matInput placeholder="Enter Phone Number" name = "contactNo" formControlName = "contactNo">
+                    <mat-error *ngIf = "contactNo?.errors?.['required']">
+                      Contact No is Required
+                      </mat-error>
+                      <div>
+                        <mat-error *ngIf = "contactNo?.errors?.['pattern']">
+                          Please provide Valid Contact Number contains 10 digits starting with 7/8/9
+                        </mat-error>
+                        </div>
+                  </mat-form-field>
+
+                  <!-- sign in and reset button -->
+
+                  <div class="container text-center mb10">
+                    <button mat-raised-button color = "primary" [disabled]="!signInForm.valid">Register</button>
+                    <button mat-raised-button color = "accent" type="reset">Clear</button>
+                  </div>
+
+            </form>
+      
+          </mat-card>
+        </div>
+    </div>
+</div>
